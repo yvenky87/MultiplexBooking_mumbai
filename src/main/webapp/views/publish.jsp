@@ -28,7 +28,7 @@
 		      			<input type="text" class="form-control" placeholder="language" required name="language">
 		      		</div>
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="DD-MMMMMM-YYYY" required name="releaseDate">
+		      			<input type="text" class="form-control" placeholder="DD-MM-YYYY" required name="releaseDate">
 		      		</div>
 		      		<div class="form-group">
 		      			<input type="text" class="form-control" placeholder="duration" required name="duration">

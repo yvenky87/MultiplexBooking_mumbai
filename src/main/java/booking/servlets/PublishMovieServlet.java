@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import booking.model.Movie;
 import booking.service.PublishService;
 import booking.service.PublishServiceImpl;
-import booking.util.RequestToObjectConverter;
+import booking.util.MultiplexBookingUtil;
 
 /**
  * Servlet implementation class PublishMovieServlet
@@ -39,7 +39,7 @@ public class PublishMovieServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//Preparing Movie Object
 		
-		Movie movie = RequestToObjectConverter.convertToMovie(request);
+		Movie movie = MultiplexBookingUtil.convertToMovie(request);
 		StringBuilder responseObject = new StringBuilder();
 		try {
 			publishService.publishMovie(movie);
