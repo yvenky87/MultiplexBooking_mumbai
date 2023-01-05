@@ -18,8 +18,21 @@
             border: 1px solid black;
          }
       </style>
+      
+      <script type="text/javascript">
+      	function bookTickets(movieId){
+      		alert(movieId);
+      		var theForm = document.getElementById("thisForm");
+    	   	theForm.action.value = "BookTicketServlet";
+    	    theForm.movieId.value = movieId;
+    	    theForm.submit();
+    	  }
+      </script>
 	</head>
 	<body class="img js-fullheight" >
+	<form action="BookTicketServlet" id="thisForm">
+	<input type="hidden" name="action">
+  	<input type="hidden" name="movieId">
 		<table>
 			<tr>
 				<th>Title</th>
@@ -39,10 +52,12 @@
 					<td>${movie.duration}</td>
 					<td>${movie.releaseDate}</td>
 					<td>${movie.genere}</td>
+					<td><input type="hidden" value="${movie.movieId}" name="bookTicket" />
+					<input type="button" value="Book" onclick="return bookTickets(${movie.movieId})"> 
 				</tr>
 			</c:forEach>
 		</table>
-
+	</form>
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>

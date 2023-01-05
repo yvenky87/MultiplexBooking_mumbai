@@ -50,6 +50,7 @@ public class MultiplexBookingUtil {
 	public static List<Movie> convertResultSetToList(ResultSet set) throws SQLException{
 		List<Movie> movies = new ArrayList();
 		while(set.next()) {
+			String movieId = set.getString("movie_id");
 			String title= set.getString("title");
 			String description= set.getString("description");
 			int duration= Integer.parseInt(set.getString("duration"));
@@ -59,6 +60,7 @@ public class MultiplexBookingUtil {
 			String country= set.getString("country");
 			String genere= set.getString("genere");
 			Movie movie = new Movie(title, description, date, language, country, genere, duration);
+			movie.setMovieId(Integer.parseInt(movieId));
 			movies.add(movie);
 		}
 		return movies;
