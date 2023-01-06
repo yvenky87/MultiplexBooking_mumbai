@@ -20,8 +20,9 @@
       </style>
       
       <script type="text/javascript">
-      	function bookTickets(movieId){
+      	function bookTickets(movieId, language){
       		alert(movieId);
+      		alert(language);
       		var theForm = document.getElementById("thisForm");
     	   	theForm.action.value = "BookTicketServlet";
     	    theForm.movieId.value = movieId;
@@ -53,7 +54,7 @@
 					<td>${movie.releaseDate}</td>
 					<td>${movie.genere}</td>
 					<td><input type="hidden" value="${movie.movieId}" name="bookTicket" />
-					<input type="button" value="Book" onclick="return bookTickets(${movie.movieId})"> 
+					<input type="button" value="Book" onclick="return bookTickets('${movie.movieId}','${movie.language}')"> 
 				</tr>
 			</c:forEach>
 		</table>
